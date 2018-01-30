@@ -1,0 +1,85 @@
+\usetheme{Rochester}
+% \usetheme{CambridgeUS}
+
+\RequirePackage{pgf}
+
+\beamer@headheight=0.1\paperwidth
+
+% \pgfdeclareimage[width=1.0\paperwidth,height=\beamer@headheight]{hubHeader}{Metrology_Logo_HQ_White_crop.jpg}
+% \pgfdeclareimage[height=0.5\beamer@headheight]{hubHeader}{Metrology_Logo_HQ_White_crop.jpg}
+
+\setbeamertemplate{blocks}[rounded][shadow=true]
+\setbeamercovered{transparent}
+
+\definecolor{hubRed} {RGB}{237,64,54}
+\definecolor{hubRed1} {RGB}{237,84,74}
+
+\setbeamercolor*{title}{fg=hubRed,bg=white}
+\setbeamercolor*{Title bar}{fg=hubRed,bg=white}
+\setbeamercolor*{Location bar}{fg=hubRed,bg=white}
+\setbeamercolor*{frametitle}{parent=Title bar}
+\setbeamercolor*{block title}{bg=hubRed,fg=white}
+\setbeamercolor*{block body}{bg=white,fg=white}
+\setbeamercolor*{section in head/foot}{bg=gray!10,fg=hubRed}
+% \setbeamercolor*{section in head/foot}{bg=hubRed,fg=gray!40}
+%\setbeamercolor*{section in head/foot}{bg=hubRed,fg=hubRed1}
+%\setbeamercolor*{section in head/foot}{bg=hubRed}
+
+\usecolortheme[named=hubRed]{structure}
+
+\setbeamerfont{section in head/foot}{size=\tiny,series=\normalfont}
+\setbeamerfont{frametitle}{size=\Large}
+
+\titlegraphic{
+  \includegraphics[height=1.3cm]{Huds.jpg}\hspace*{4cm}~%
+  \includegraphics[height=1cm]{Metrology_Logo_HQ_White_crop.jpg}
+}
+
+%\setbeamertemplate{headline}
+\setbeamertemplate{frametitle}
+{
+  \vskip -1.1\beamer@headheight
+  \hskip 0.72\paperwidth
+  \pgfbox[left,top]{\includegraphics[height=0.5\beamer@headheight]{Metrology_Logo_HQ_White_crop.jpg}}
+  \vskip 0.6\beamer@headheight
+
+  \vskip-\baselineskip
+  \vskip-0.2cm
+  \hskip0.7cm\usebeamerfont*{frametitle}\insertframetitle
+  \vskip-0.10em
+  \hskip0.7cm\usebeamerfont*{framesubtitle}\insertframesubtitle
+}
+
+\setbeamertemplate{headline}
+{
+  \linethickness{0.0pt}
+
+  \framelatex{
+  \begin{beamercolorbox}[wd=\paperwidth,ht=0.3\beamer@headheight]{Title bar}
+    \usebeamerfont{section in head/foot}%
+    \insertsectionnavigationhorizontal{0pt}{\hskip0.22cm}{}%
+  \end{beamercolorbox}}
+
+  \framelatex{
+  \begin{beamercolorbox}[wd=\paperwidth,ht=0.7\beamer@headheight]{Title bar}
+  \end{beamercolorbox}}
+}
+
+% \addtobeamertemplate{frametitle}{}{
+  % \vskip -\beamer@headheight
+  % \hskip 0.72\paperwidth
+  % \pgfbox[left,top]{\includegraphics[height=0.5\beamer@headheight]{Metrology_Logo_HQ_White_crop.jpg}}
+  % \vskip 0.3\beamer@headheight
+% }
+
+\setbeamertemplate{footline}
+{
+  \linethickness{0.25pt}
+  \framelatex{
+  \begin{beamercolorbox}[leftskip=.3cm,wd=\paperwidth,ht=0.3\beamer@headheight,sep=0.1cm]{Location bar}
+    \usebeamerfont{section in head/foot}%
+    \insertshortauthor~|~\insertshorttitle
+    \hfill
+    \insertframenumber/\inserttotalframenumber
+  \end{beamercolorbox}}
+}
